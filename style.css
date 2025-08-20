@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3d357e;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+header img {
+    margin-top: 30px;
+    width: 150px;
+    height: auto;
+}
+
+main {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    }
+
+th {
+    background-color: rgb(242, 242, 242);
+}
+
+.item{
+    width: 35%;
+}
+
+th,td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    background-color: white;
+    padding: 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+td input[type="text"] {
+    width: 500px;
+}
+
+td input[type="number"] {
+    width: 4ch;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.container-btn {
+    text-align: center;
+    margin: 20px;
+}
+
+.btn-enviar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #218838;
+}
+
+.fonte {
+    font-family: 'manrope';
+    font-weight: 150;
+    font-size: 25pt;
+    color: white;
+    border: 20px;
+}
+
+.estoque{
+    margin: 50px 0;
+}
+
+@font-face {
+    font-family: 'manrope';
+    src: url(fonts/Manrope-VariableFont_wght.ttf) format('truetype');
+}
