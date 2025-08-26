@@ -1,107 +1,94 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'manrope', sans-serif;
 }
 
 body {
-    background-color: #3d357e;
-    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
+    background-color: #003d5b;
+    color: white;
+    padding: 20px;
     text-align: center;
 }
 
 header img {
-    margin-top: 30px;
     width: 150px;
-    height: auto;
+    margin-bottom: 10px;
 }
 
 main {
-    text-align: center;
-    margin-top: 25px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-table {
-    width: 70%;
-    border-collapse: collapse;
-    margin: 20px auto;
-    }
-
-th {
-    background-color: rgb(242, 242, 242);
-}
-
-.item{
-    width: 35%;
-}
-
-th,td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-td {
-    background-color: white;
-    padding: 10px;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-td input[type="text"] {
-    width: 500px;
-}
-
-td input[type="number"] {
-    width: 4ch;
-    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    display: block;
 }
 
+.form-container, .estoque-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-.container-btn {
-    text-align: center;
-    margin: 20px;
+h2 {
+    color: #003d5b;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input[type="text"], input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .btn-enviar {
     padding: 10px 20px;
-    font-size: 16px;
-    background-color: #28a745;
+    background-color: #00a884;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .btn-enviar:hover {
-    background-color: #218838;
+    background-color: #008f70;
 }
 
-.fonte {
-    font-family: 'manrope';
-    font-weight: 150;
-    font-size: 25pt;
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #003d5b;
     color: white;
-    border: 20px;
 }
 
-.estoque{
-    margin: 50px 0;
-}
-
-@font-face {
-    font-family: 'manrope';
-    src: url(fonts/Manrope-VariableFont_wght.ttf) format('truetype');
+.btn-delete {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
