@@ -17,8 +17,16 @@
             <h2>Adicionar Novo Item</h2>
             <form id="addItemForm">
                 <input type="text" id="itemName" placeholder="Nome do Item" required>
-                <input type="number" id="itemQuantity" placeholder="Quantidade" min="0" required>
-                <button type="submit" class="btn-enviar">Adicionar</button>
+                <input type="text" id="itemSerial" placeholder="Número de Série" required>
+                <input type="number" id="itemQuantity" placeholder="Quantidade" min="1" value="1" required>
+
+                <div id="optionalFields" class="optional-fields">
+                    <input type="text" id="itemModel" placeholder="Modelo">
+                    <input type="text" id="itemSector" placeholder="Setor">
+                </div>
+
+                <button type="button" id="toggleOptionalFields" class="btn-secondary">Adicionar Detalhes</button>
+                <button type="submit" class="btn-enviar">Adicionar ao Estoque</button>
             </form>
         </div>
         <div class="estoque-container">
@@ -27,7 +35,10 @@
                 <thead>
                     <tr>
                         <th>Item</th>
+                        <th>Nº de Série</th>
                         <th>Quantidade</th>
+                        <th>Modelo</th>
+                        <th>Setor</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
