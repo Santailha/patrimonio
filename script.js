@@ -95,3 +95,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// (Todo o código anterior do script.js permanece o mesmo)
+// ...
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (toda a lógica existente, como auth, loadItems, addItemForm, etc.)
+
+    const logoutBtn = document.getElementById('logoutBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    // --- LÓGICA DO BOTÃO DE SAIR ---
+    logoutBtn.addEventListener('click', () => {
+        auth.signOut().then(() => {
+            // Logout bem-sucedido, redireciona para a tela de login
+            window.location.href = 'login.html';
+        }).catch((error) => {
+            console.error("Erro ao fazer logout: ", error);
+        });
+    });
+
+    // --- LÓGICA DO FILTRO DE BUSCA ---
+    searchInput.addEventListener('keyup', () => {
+        const filterText = searchInput.value.toLowerCase();
+        const tableRows = document.querySelectorAll('#estoqueTable tbody tr');
+
+        tableRows.forEach(row => {
+            const rowText = row.textContent.toLowerCase();
+            if (rowText.includes(filterText)) {
+                row.style.display = ''; // Mostra a linha se o texto corresponder
+            } else {
+                row.style.display = 'none'; // Oculta a linha se não corresponder
+            }
+        });
+    });
+    
+    // ... (Restante do seu código, como o event listener para remover item)
+});
