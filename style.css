@@ -1,76 +1,172 @@
-/* Adicione ou substitua estas regras no seu style.css */
-
-.login-page-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f2f5; /* Um cinza claro para o fundo */
-}
-
-.login-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 420px;
-    padding: 20px;
-}
-
-.login-card {
-    background-color: #ffffff;
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    width: 100%;
-}
-
-.login-header {
-    margin-bottom: 25px;
-}
-
-.login-logo {
-    width: 160px;
-    margin-bottom: 15px;
-}
-
-.login-card h2 {
-    color: #3d357e; /* Cor Azul Principal */
-    font-size: 1.7em;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'manrope', sans-serif;
 }
 
-.login-form .form-group {
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #3d357e; /* Cor Azul Principal */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: white; /* Título no header é branco */
+    font-size: 25pt;
+}
+
+h2 {
+    color: #3d357e; /* Títulos nos cards são azuis */
     margin-bottom: 20px;
+}
+
+/* --- ESTILO DOS CARDS (Painel e Login) --- */
+.form-container,
+.estoque-container,
+.login-container {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- ESTILO DOS FORMULÁRIOS (Painel e Login) --- */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    flex: 1 1 calc(33.333% - 10px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.optional-fields {
+    display: none;
+    width: 100%;
+    gap: 10px;
+}
+
+.optional-fields.active {
+    display: flex;
+}
+
+/* --- ESTILO DOS BOTÕES --- */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar {
+    background-color: #edae0f; /* Cor Amarela */
+    color: #3d357e; /* Cor Azul Principal */
+}
+
+.btn-enviar:hover {
+    background-color: #d49c0d;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-delete {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+}
+
+/* --- TABELA DE ESTOQUE --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
 }
 
-.login-form label {
+th {
+    background-color: #3d357e; /* Cor Azul Principal */
+    color: white;
+}
+
+/* --- AJUSTES ESPECÍFICOS PARA A TELA DE LOGIN --- */
+.login-container {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-container form {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-container .form-group {
+    width: 100%;
+}
+
+.login-container label {
     display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: 600;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.login-form input {
+.login-container input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
 }
 
-.login-form .btn-enviar {
+.login-container .btn-enviar {
     width: 100%;
     padding: 12px;
-    font-size: 1.1em;
+    font-size: 16px;
     margin-top: 10px;
 }
 
 .error-message {
     color: #dc3545;
-    margin-top: 15px;
-    font-weight: 500;
+    text-align: center;
     min-height: 20px;
+    margin-top: 5px;
 }
