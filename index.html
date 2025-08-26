@@ -1,91 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
+    <title>Controle de Estoque - Santa Ilha</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
-
 <body>
     <header>
-        <img src="img/Logo_Bitrix.png" alt="">
-        <h1 class="fonte">
-            Adicionar item no estoque
-        </h1>
+        <img src="img/Logo_Bitrix.png" alt="Logo Bitrix">
+        <h1>Controle de Estoque</h1>
     </header>
     <main>
-        <table class="tabela.input">
-            <thead>
-                <tr>
-                <th>item</th>
-                <th>Quantidade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" id="item" name="item"></td>
-                    <td><input type="number" id="quantidade" name="quantidade" min="0" max="99"></td>
-                </tr>
-                <tr></tr>
-                <td><input type="text" id="item" name="item"></th>
-                <td><input type="number" id="quantidade" name="quantidade" min="0" max="99"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" id="item" name="item"></th>
-                    <td><input type="number" id="quantidade" name="quantidade" min="0" max="99"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" id="item" name="item"></th>
-                    <td><input type="number" id="quantidade" name="quantidade" min="0" max="99"></td>
-                </tr>
-                <tr></tr>
-                <td><input type="text" id="item" name="item"></th>
-                <td><input type="number" id="quantidade" name="quantidade" min="0" max="99"></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="container-btn">
-            <button class="btn-enviar" id="btn-enviar">Enviar</button>
+        <div class="form-container">
+            <h2>Adicionar Novo Item</h2>
+            <form id="addItemForm">
+                <input type="text" id="itemName" placeholder="Nome do Item" required>
+                <input type="number" id="itemQuantity" placeholder="Quantidade" min="0" required>
+                <input type="number" id="itemPrice" placeholder="Preço (R$)" min="0" step="0.01" required>
+                <button type="submit" class="btn-enviar">Adicionar</button>
+            </form>
         </div>
-
-        <div class="estoque">
-        <h1 class="fonte">Estoque</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th class="item">Item</th>
-                    <th>Entrada</th>
-                    <th>Saida</th>
-                    <th>Saldo em Produtos</th>
-                    <th>Situação</th>
-                </tr>
-            </thead>
-            <tr>
-                <td>Teclado Multilase 3299</td>
-                <td>20</td>
-                <td>20</td>
-                <td>R$12,99</td>
-                <td>Em falta</td>
-            </tr>
-            <tr>
-                <td>Teclado Multilase 3299</td>
-                <td>20</td>
-                <td>20</td>
-                <td>R$12,99</td>
-                <td>Em falta</td>
-            </tr>
-            <tr>
-                <td>Teclado Multilase 3299</td>
-                <td>20</td>
-                <td>20</td>
-                <td>R$12,99</td>
-                <td>Em falta</td>   
-            </tr>
-        </table>
+        <div class="estoque-container">
+            <h2>Estoque Atual</h2>
+            <table id="estoqueTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Valor Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
         </div>
-        <main>
-
+    </main>
+    <script src="script.js"></script>
+</body>
 </html>
