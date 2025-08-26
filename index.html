@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Patrimônio</title>
+    <title>Controle de Estoque - Santa Ilha</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <img src="img/Logo_Bitrix.png" alt="Logo Bitrix">
-        <h1>Controle de Patrimônio</h1>
+        <h1>Controle de Estoque</h1>
+        <button id="logoutBtn" class="btn-logout">Sair</button>
     </header>
     <main>
         <div class="form-container">
@@ -31,6 +32,7 @@
         </div>
         <div class="estoque-container">
             <h2>Estoque Atual</h2>
+            <input type="text" id="searchInput" placeholder="Filtrar itens...">
             <table id="estoqueTable">
                 <thead>
                     <tr>
