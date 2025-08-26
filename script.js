@@ -1,49 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const addItemForm = document.getElementById('addItemForm');
-    const estoqueTableBody = document.querySelector('#estoqueTable tbody');
-    const toggleOptionalFieldsBtn = document.getElementById('toggleOptionalFields');
-    const optionalFields = document.getElementById('optionalFields');
+// Configuração do seu projeto Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBGZ93MoIsFJ2vO-zgWhCOBbhfKiUQZ3WE",
+    authDomain: "estoque-patrimonio.firebaseapp.com",
+    projectId: "estoque-patrimonio",
+    storageBucket: "estoque-patrimonio.appspot.com",
+    messagingSenderId: "445286258280",
+    appId: "1:445286258280:web:398f3df3dc9c12741e8ddd"
+};
 
-    toggleOptionalFieldsBtn.addEventListener('click', function() {
-        optionalFields.classList.toggle('active');
-        if (optionalFields.classList.contains('active')) {
-            this.textContent = 'Ocultar Detalhes';
-        } else {
-            this.textContent = 'Adicionar Detalhes';
-        }
-    });
+// Inicializa o Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
-    addItemForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+const loginForm = document.getElementById('loginForm');
+const errorMessage = document.getElementById('errorMessage');
 
-        const itemName = document.getElementById('itemName').value;
-        const itemSerial = document.getElementById('itemSerial').value;
-        const itemQuantity = document.getElementById('itemQuantity').value;
-        const itemModel = document.getElementById('itemModel').value || 'N/A';
-        const itemSector = document.getElementById('itemSector').value || 'N/A';
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-        const newRow = `
-            <tr>
-                <td>${itemName}</td>
-                <td>${itemSerial}</td>
-                <td>${itemQuantity}</td>
-                <td>${itemModel}</td>
-                <td>${itemSector}</td>
-                <td><button class="btn-delete">Remover</button></td>
-            </tr>
-        `;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-        estoqueTableBody.innerHTML += newRow;
-        addItemForm.reset();
-        
-        // Oculta os campos opcionais após adicionar
-        optionalFields.classList.remove('active');
-        toggleOptionalFieldsBtn.textContent = 'Adicionar Detalhes';
-    });
-
-    estoqueTableBody.addEventListener('click', function(e) {
-        if (e.target.classList.contains('btn-delete')) {
-            e.target.closest('tr').remove();
-        }
-    });
+    auth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Login bem-sucedido, redireciona para a página de estoque
+            window.location.href = 'index.html';
+        })
+        .catch((error) => {
+            // Exibe uma mensagem de erro
+            errorMessage.textContent = 'Email ou senha inválidos. Tente novamente.';
+            console.error("Erro de autenticação:", error);
+        });
 });
