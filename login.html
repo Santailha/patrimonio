@@ -7,26 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
-<body>
-    <div class="login-container">
-        <header>
-            <img src="img/Logo_Bitrix.png" alt="Logo Bitrix">
-            <h1>Acessar Estoque</h1>
-        </header>
-        <main>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" required>
-                </div>
-                <button type="submit" class="btn-enviar">Entrar</button>
-                <p id="errorMessage" class="error-message"></p>
-            </form>
-        </main>
+<body class="login-page-body">
+    <div class="login-wrapper">
+        <div class="login-card">
+            <header class="login-header">
+                <img src="img/Logo_Bitrix.png" alt="Logo Bitrix" class="login-logo">
+                <h2>Acessar Controle de Estoque</h2>
+            </header>
+            <main class="login-main">
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="********" required>
+                    </div>
+                    <button type="submit" class="btn-enviar">Entrar</button>
+                    <p id="errorMessage" class="error-message"></p>
+                </form>
+            </main>
+        </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
